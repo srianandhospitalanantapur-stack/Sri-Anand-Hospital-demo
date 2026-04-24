@@ -16,19 +16,19 @@ const doctors = [
   { 
     name: 'Dr. Rajakullayappa', 
     role: 'Plastic Surgeon', 
-    image: null,
+    image: 'https://res.cloudinary.com/dctf5un0g/image/upload/v1777024173/dr_raja_kullayappa_fe9kzd.jpg',
     initials: 'RK'
   },
   { 
     name: 'Dr. Jayachandra', 
     role: 'Neurosurgeon', 
-    image: null,
+    image: 'https://res.cloudinary.com/dctf5un0g/image/upload/v1777024182/dr_jayachandra_wzcenn.png ',
     initials: 'JC'
   },
   { 
     name: 'Dr. Chandra Mohan', 
     role: 'Urologist', 
-    image: null,
+    image: 'https://res.cloudinary.com/dctf5un0g/image/upload/v1777024175/Dr_Chandra_mohan_ud5an6.jpg ',
     initials: 'CM'
   },
 ];

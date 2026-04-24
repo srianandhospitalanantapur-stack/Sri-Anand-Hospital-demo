@@ -1,7 +1,36 @@
-import { motion } from 'motion/react';
-import { Phone, Clock, Mail, MapPin } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Phone, Clock, Mail, MapPin, CheckCircle2 } from 'lucide-react';
 
 export default function Contact() {
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus('submitting');
+    
+    const formData = new FormData(e.currentTarget);
+    
+    try {
+      const response = await fetch("https://formspree.io/f/mgorrbpa", {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        setStatus('success');
+        e.currentTarget.reset();
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      setStatus('error');
+    }
+  };
+
   return (
     <section id="contact" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,7 +95,7 @@ export default function Contact() {
             <div className="rounded-2xl overflow-hidden shadow-lg h-64 bg-gray-200">
               {/* Google Maps Placeholder/Static Image would go here */}
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.601004128036!2d77.601550!3d14.676345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDQwJzM0LjgiTiA3N8KwMzYnMDUuNiJF!5e0!3m2!1sen!2sin!4v1713950000000!5m2!1sen!2sin" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.344485584555!2d77.6012148!3d14.6893436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb14b522b2b5fdf%3A0xb640468c2863ad4!2sAnand%20hospital!5e0!3m2!1sen!2sin!4v1713950000000!5m2!1sen!2sin" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
@@ -82,64 +111,100 @@ export default function Contact() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100"
+            className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 min-h-[500px] flex flex-col"
           >
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Book an Appointment</h3>
-            <form 
-              action="https://formspree.io/f/mgorrbpa" 
-              method="POST"
-              className="space-y-4"
-            >
-              <div>
-                <input 
-                  type="text" 
-                  name="name"
-                  placeholder="Your Name" 
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all"
-                />
-              </div>
-              <div>
-                <input 
-                  type="tel" 
-                  name="phone"
-                  placeholder="Phone Number" 
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all"
-                />
-              </div>
-              <div>
-                <select 
-                  name="department"
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all bg-white"
+            
+            <AnimatePresence mode="wait">
+              {status === 'success' ? (
+                <motion.div 
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  className="flex-grow flex flex-col items-center justify-center text-center space-y-4"
                 >
-                  <option value="">Select Department</option>
-                  <option value="Orthopedics">Orthopedics</option>
-                  <option value="Neurosurgery">Neurosurgery</option>
-                  <option value="General Surgery">General Surgery</option>
-                  <option value="Urology">Urology</option>
-                  <option value="Plastic Surgery">Plastic Surgery</option>
-                  <option value="Nephrology">Nephrology</option>
-                  <option value="ENT">ENT</option>
-                  <option value="Physiotherapy">Physiotherapy</option>
-                </select>
-              </div>
-              <div>
-                <textarea 
-                  name="message"
-                  rows={4} 
-                  placeholder="Your Message (optional)" 
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all"
-                ></textarea>
-              </div>
-              <button 
-                type="submit" 
-                className="w-full bg-red-600 text-white py-4 rounded-lg font-bold hover:bg-red-700 transition-colors shadow-lg active:scale-[0.98]"
-              >
-                Send Appointment Request
-              </button>
-            </form>
+                  <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center">
+                    <CheckCircle2 size={48} />
+                  </div>
+                  <div>
+                    <h4 className="text-2xl font-bold text-gray-900">Booking Confirmed!</h4>
+                    <p className="text-gray-600 mt-2">Your booking is confirmed, we will update you soon.</p>
+                  </div>
+                  <button 
+                    onClick={() => setStatus('idle')}
+                    className="mt-4 text-red-600 font-bold hover:underline"
+                  >
+                    Book another appointment
+                  </button>
+                </motion.div>
+              ) : (
+                <motion.form 
+                  key="form"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onSubmit={handleSubmit}
+                  className="space-y-4 flex-grow"
+                >
+                  <div>
+                    <input 
+                      type="text" 
+                      name="name"
+                      placeholder="Your Name" 
+                      required
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all"
+                    />
+                  </div>
+                  <div>
+                    <input 
+                      type="tel" 
+                      name="phone"
+                      placeholder="Phone Number" 
+                      required
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all"
+                    />
+                  </div>
+                  <div>
+                    <select 
+                      name="department"
+                      required
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all bg-white"
+                    >
+                      <option value="">Select Department</option>
+                      <option value="Orthopedics">Orthopedics</option>
+                      <option value="Neurosurgery">Neurosurgery</option>
+                      <option value="General Surgery">General Surgery</option>
+                      <option value="Urology">Urology</option>
+                      <option value="Plastic Surgery">Plastic Surgery</option>
+                      <option value="Nephrology">Nephrology</option>
+                      <option value="ENT">ENT</option>
+                      <option value="Physiotherapy">Physiotherapy</option>
+                    </select>
+                  </div>
+                  <div>
+                    <textarea 
+                      name="message"
+                      rows={4} 
+                      placeholder="Your Message (optional)" 
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all"
+                    ></textarea>
+                  </div>
+                  
+                  {status === 'error' && (
+                    <p className="text-red-600 text-sm font-medium">Something went wrong. Please try again or call us directly.</p>
+                  )}
+
+                  <button 
+                    type="submit" 
+                    disabled={status === 'submitting'}
+                    className="w-full bg-red-600 text-white py-4 rounded-lg font-bold hover:bg-red-700 transition-colors shadow-lg active:scale-[0.98] disabled:bg-gray-400 disabled:cursor-not-allowed"
+                  >
+                    {status === 'submitting' ? 'Sending...' : 'Send Appointment Request'}
+                  </button>
+                </motion.form>
+              )}
+            </AnimatePresence>
           </motion.div>
         </div>
       </div>

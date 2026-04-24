@@ -63,10 +63,11 @@ export default function About() {
                 MBBS, MS (Ortho) — Managing Director
               </p>
               <p className="text-gray-600 leading-relaxed text-lg">
-                Sri Anand Hospital is one of the best hospitals in Anantapur, Andhra Pradesh. 
-                Established with a vision to provide world-class healthcare, we combine 
-                experienced doctors, advanced medical equipment, and compassionate patient care 
-                to deliver outstanding treatment outcomes.
+                Sri Anand Hospital is a multispecialty hospital established in 2007. It started as a small clinic and later grew into a 50-bed multispecialty hospital in 2009. The hospital is committed to providing safe, ethical, and comprehensive care with a long-term focus on building trustworthy and reliable healthcare services for patients, including support for poorer communities.
+
+The hospital specializes in orthopedic and musculoskeletal care, including diagnosis, treatment, and rehabilitation of bone, joint, ligament, muscle, and tendon conditions. Its major services include trauma and fracture care, arthroscopy, joint replacement, pediatric orthopedics, sports injuries, and rehabilitation. It also emphasizes advanced and minimally invasive treatment methods for better recovery.
+
+The hospital is led by Dr. Mude Anand Babu Naik, who holds MBBS, MS (Ortho) and has 15 years of experience. His areas of expertise include complex orthopedic trauma surgery, arthroscopy, and joint replacement..
               </p>
               <p className="text-gray-600 leading-relaxed text-lg">
                 Our multi-specialty facility near RTC Bus Stand serves as a trusted emergency 
