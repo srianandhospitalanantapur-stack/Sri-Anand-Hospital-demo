@@ -38,8 +38,34 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Newsletter */}
+          <div>
+            <h4 className="text-lg font-bold text-white mb-6">Newsletter</h4>
+            <p className="text-sm mb-4">Subscribe for healthcare tips and hospital updates.</p>
+            <form 
+              action=" https://formspree.io/f/mgorrbpa " 
+              method="POST"
+              className="flex flex-col gap-2"
+            >
+              <input type="hidden" name="_subject" value="Newsletter Subscription" />
+              <input 
+                type="email" 
+                name="email"
+                placeholder="Your Email" 
+                required
+                className="bg-gray-800 border-none rounded-lg px-4 py-2 text-sm text-white focus:ring-2 focus:ring-red-600 outline-none w-full"
+              />
+              <button 
+                type="submit"
+                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm font-bold transition-colors w-full"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+
           {/* Contact Info */}
-          <div className="lg:col-span-2">
+          <div>
             <h4 className="text-lg font-bold text-white mb-6">Contact Info</h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="flex items-start gap-3">
@@ -48,16 +74,21 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="text-red-400 shrink-0" size={20} />
-                <p className="text-sm">+91 94406 83444</p>
+                <p className="text-sm">+91 74166 26899</p>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="text-red-400 shrink-0" size={20} />
                 <p className="text-sm">srianandhospitalanantapur.com</p>
               </div>
-              <div className="flex items-center gap-3">
+              <a 
+                href="https://wa.me/917416626899" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="flex items-center gap-3 hover:text-red-400 transition-colors"
+              >
                 <MessageCircle className="text-red-400 shrink-0" size={20} />
                 <p className="text-sm">Available on WhatsApp</p>
-              </div>
+              </a>
             </div>
           </div>
         </div>

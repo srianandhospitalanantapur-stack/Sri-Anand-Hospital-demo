@@ -40,11 +40,11 @@ export default function Emergency() {
                className="inline-block"
             >
               <a 
-                href="tel:+919440683444"
+                href="tel:+917416626899"
                 className="bg-white text-red-600 px-10 py-5 rounded-2xl flex items-center gap-4 text-2xl font-black shadow-2xl transition-all"
               >
                 <PhoneCall size={32} />
-                +91 94406 83444
+                +91 74166 26899
               </a>
             </motion.div>
           </motion.div>

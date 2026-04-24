@@ -9,11 +9,10 @@ export default function Hero() {
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 hover:scale-105"
         style={{ 
           backgroundImage: 'url("https://res.cloudinary.com/dctf5un0g/image/upload/v1777024207/hospital.png_qshlpi.png")',
-          backgroundBlendMode: 'overlay',
-          backgroundColor: 'rgba(0,0,0,0.4)'
+          backgroundColor: 'rgba(0,0,0,0.3)'
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-900/60 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-gray-900/40 to-transparent"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-20">
@@ -33,8 +32,8 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-5xl md:text-8xl font-black mb-8 leading-[1.1] tracking-tighter text-white"
           >
-            Best Healthcare <br />
-            Hospital in <span className="text-red-500 relative">
+            Best Hospital <br />
+            in <span className="text-red-500 relative">
               Anantapur
               <svg className="absolute -bottom-2 left-0 w-full h-3 text-red-500/30" viewBox="0 0 100 10" preserveAspectRatio="none">
                 <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" strokeLinecap="round" />
@@ -59,7 +58,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-5"
           >
             <a 
-              href="tel:+919440683444"
+              href="tel:+917416626899"
               className="bg-red-600 hover:bg-red-500 text-white px-10 py-5 rounded-2xl flex items-center justify-center gap-3 font-bold transition-all shadow-[0_10px_30px_rgba(220,38,38,0.3)] hover:-translate-y-1 active:scale-95 group"
             >
               <Phone className="group-hover:animate-bounce" size={22} />
@@ -73,7 +72,9 @@ export default function Hero() {
               Book Appointment
             </a>
             <a 
-              href="https://wa.me/919440683444"
+              href="https://wa.me/917416626899"
+              target="_blank"
+              rel="noreferrer"
               className="bg-emerald-500 hover:bg-emerald-400 text-white px-10 py-5 rounded-2xl flex items-center justify-center gap-3 font-bold transition-all shadow-[0_10px_30px_rgba(16,185,129,0.3)] hover:-translate-y-1 active:scale-95 group"
             >
               <MessageCircle className="group-hover:rotate-12" size={22} />

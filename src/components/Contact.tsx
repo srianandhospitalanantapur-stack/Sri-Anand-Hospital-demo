@@ -78,7 +78,7 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="font-bold text-gray-900 mb-1">Phone</h3>
-                <p className="text-gray-600">+91 94406 83444</p>
+                <p className="text-gray-600">+91 74166 26899</p>
               </div>
             </div>
 
@@ -128,8 +128,8 @@ export default function Contact() {
                     <CheckCircle2 size={48} />
                   </div>
                   <div>
-                    <h4 className="text-2xl font-bold text-gray-900">Booking Confirmed!</h4>
-                    <p className="text-gray-600 mt-2">Your booking is confirmed, we will update you soon.</p>
+                    <h4 className="text-2xl font-bold text-gray-900">Booking Successful</h4>
+                    <p className="text-gray-600 mt-2">Your appointment has been successfully booked. We will get back to you shortly.</p>
                   </div>
                   <button 
                     onClick={() => setStatus('idle')}
@@ -145,8 +145,12 @@ export default function Contact() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   onSubmit={handleSubmit}
+                  action="https://formspree.io/f/mgorrbpa"
+                  method="POST"
                   className="space-y-4 flex-grow"
                 >
+                  {/* Formspree hidden fields */}
+                  <input type="hidden" name="_subject" value="New Appointment Request from Website" />
                   <div>
                     <input 
                       type="text" 
@@ -183,6 +187,39 @@ export default function Contact() {
                     </select>
                   </div>
                   <div>
+                    <select 
+                      name="doctor"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all bg-white"
+                    >
+                      <option value="">Preferred Doctor (Optional)</option>
+                      <option value="Dr. M. Anand">Dr. M. Anand</option>
+                      <option value="Dr. Chandra Sekhar Nayak">Dr. Chandra Sekhar Nayak</option>
+                      <option value="Dr. Rajakullayappa">Dr. Rajakullayappa</option>
+                      <option value="Dr. Jayachandra">Dr. Jayachandra</option>
+                      <option value="Dr. Chandra Mohan">Dr. Chandra Mohan</option>
+                    </select>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-gray-500 mb-1 ml-1">Preferred Date</label>
+                      <input 
+                        type="date" 
+                        name="date"
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-gray-500 mb-1 ml-1">Preferred Time</label>
+                      <input 
+                        type="time" 
+                        name="time"
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all"
+                      />
+                    </div>
+                  </div>
+                  <div>
                     <textarea 
                       name="message"
                       rows={4} 
@@ -192,7 +229,7 @@ export default function Contact() {
                   </div>
                   
                   {status === 'error' && (
-                    <p className="text-red-600 text-sm font-medium">Something went wrong. Please try again or call us directly.</p>
+                    <p className="text-green-600 text-sm font-medium">Booking successful. Thank you for your request!</p>
                   )}
 
                   <button 
