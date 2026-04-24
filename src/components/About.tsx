@@ -34,13 +34,13 @@ export default function About() {
             <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
               {/* Assuming the first image in the set is Dr. M. Anand */}
               <img 
-                src="https://ais-dev-e2lznh4vutqlruyqhe37ba-756291966100.asia-east1.run.app/assets/dr_m_anand.png" 
+                src=" https://res.cloudinary.com/dctf5un0g/image/upload/v1777024195/anand.png2_qsjwb0.png  " 
                 alt="Dr. M. Anand" 
                 className="w-full h-auto object-cover"
                 onError={(e) => {
                    // Fallback if the path is wrong - I'll use a placeholder or try to infer from common behavior
                    // but usually users upload them as artifacts
-                   e.currentTarget.src = "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=800";
+                   e.currentTarget.src = "https://res.cloudinary.com/dctf5un0g/image/upload/v1777024195/anand.png2_qsjwb0.png ";
                 }}
               />
             </div>

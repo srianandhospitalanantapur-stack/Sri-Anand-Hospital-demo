@@ -85,36 +85,49 @@ export default function Contact() {
             className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100"
           >
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Book an Appointment</h3>
-            <form className="space-y-4">
+            <form 
+              action="https://formspree.io/f/mgorrbpa" 
+              method="POST"
+              className="space-y-4"
+            >
               <div>
                 <input 
                   type="text" 
+                  name="name"
                   placeholder="Your Name" 
+                  required
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all"
                 />
               </div>
               <div>
                 <input 
                   type="tel" 
+                  name="phone"
                   placeholder="Phone Number" 
+                  required
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all"
                 />
               </div>
               <div>
-                <select className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all bg-white">
-                  <option>Select Department</option>
-                  <option>Orthopedics</option>
-                  <option>Neurosurgery</option>
-                  <option>General Surgery</option>
-                  <option>Urology</option>
-                  <option>Plastic Surgery</option>
-                  <option>Nephrology</option>
-                  <option>ENT</option>
-                  <option>Physiotherapy</option>
+                <select 
+                  name="department"
+                  required
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all bg-white"
+                >
+                  <option value="">Select Department</option>
+                  <option value="Orthopedics">Orthopedics</option>
+                  <option value="Neurosurgery">Neurosurgery</option>
+                  <option value="General Surgery">General Surgery</option>
+                  <option value="Urology">Urology</option>
+                  <option value="Plastic Surgery">Plastic Surgery</option>
+                  <option value="Nephrology">Nephrology</option>
+                  <option value="ENT">ENT</option>
+                  <option value="Physiotherapy">Physiotherapy</option>
                 </select>
               </div>
               <div>
                 <textarea 
+                  name="message"
                   rows={4} 
                   placeholder="Your Message (optional)" 
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all"

@@ -4,13 +4,13 @@ const doctors = [
   { 
     name: 'Dr. M. Anand', 
     role: 'Orthopedic Surgeon & Managing Director', 
-    image: 'https://ais-dev-e2lznh4vutqlruyqhe37ba-756291966100.asia-east1.run.app/assets/dr_m_anand_card.png',
+    image: 'https://res.cloudinary.com/dctf5un0g/image/upload/v1777024195/anand.png2_qsjwb0.png ',
     initials: 'MA'
   },
   { 
     name: 'Dr. Chandra Sekhar Nayak', 
     role: 'General Surgeon', 
-    image: null,
+    image: 'https://res.cloudinary.com/dctf5un0g/image/upload/v1777024341/DSC05689_osog6h.jpg',
     initials: 'CN'
   },
   { 
