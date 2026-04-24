@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="space-y-6">
             <div className="flex items-center gap-3">
               <img 
-                src="/Sri Anand Hospital logo.png" 
+                src="https://res.cloudinary.com/dctf5un0g/image/upload/v1777024186/logo.png_ys4iva.png " 
                 alt="Sri Anand Hospital" 
                 className="h-12 w-auto brightness-0 invert" 
                 referrerPolicy="no-referrer"
@@ -48,11 +48,11 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="text-red-400 shrink-0" size={20} />
-                <p className="text-sm">+91 98765 43210</p>
+                <p className="text-sm">+91 94406 83444</p>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="text-red-400 shrink-0" size={20} />
-                <p className="text-sm">info@srianandhospital.com</p>
+                <p className="text-sm">srianandhospitalanantapur.com</p>
               </div>
               <div className="flex items-center gap-3">
                 <MessageCircle className="text-red-400 shrink-0" size={20} />

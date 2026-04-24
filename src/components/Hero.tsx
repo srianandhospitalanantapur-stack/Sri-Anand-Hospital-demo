@@ -59,7 +59,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-5"
           >
             <a 
-              href="tel:+919876543210"
+              href="tel:+919440683444"
               className="bg-red-600 hover:bg-red-500 text-white px-10 py-5 rounded-2xl flex items-center justify-center gap-3 font-bold transition-all shadow-[0_10px_30px_rgba(220,38,38,0.3)] hover:-translate-y-1 active:scale-95 group"
             >
               <Phone className="group-hover:animate-bounce" size={22} />
@@ -73,7 +73,7 @@ export default function Hero() {
               Book Appointment
             </a>
             <a 
-              href="https://wa.me/919876543210"
+              href="https://wa.me/919440683444"
               className="bg-emerald-500 hover:bg-emerald-400 text-white px-10 py-5 rounded-2xl flex items-center justify-center gap-3 font-bold transition-all shadow-[0_10px_30px_rgba(16,185,129,0.3)] hover:-translate-y-1 active:scale-95 group"
             >
               <MessageCircle className="group-hover:rotate-12" size={22} />

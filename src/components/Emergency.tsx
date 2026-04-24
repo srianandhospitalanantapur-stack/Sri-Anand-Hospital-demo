@@ -40,11 +40,11 @@ export default function Emergency() {
                className="inline-block"
             >
               <a 
-                href="tel:+919876543210"
+                href="tel:+919440683444"
                 className="bg-white text-red-600 px-10 py-5 rounded-2xl flex items-center gap-4 text-2xl font-black shadow-2xl transition-all"
               >
                 <PhoneCall size={32} />
-                +91 98765 43210
+                +91 94406 83444
               </a>
             </motion.div>
           </motion.div>
@@ -61,7 +61,7 @@ export default function Emergency() {
             */}
             <div className="relative">
                <img 
-                 src="https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&fit=crop&q=80&w=800" 
+                 src="https://res.cloudinary.com/dctf5un0g/image/upload/v1777028612/Ambulance_irzaxo.png " 
                  alt="Ambulance Service" 
                  className="w-full max-w-lg h-auto object-cover rounded-3xl shadow-3xl"
                />
