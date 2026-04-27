@@ -52,37 +52,82 @@ export default function About() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <div className="space-y-3">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
-                Our <span className="text-red-600">Legacy</span>
+            <div className="space-y-4">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 border-b-2 border-red-600 pb-2 inline-block">
+                About <span className="text-red-600">Sri Anand Hospital</span>
               </h3>
-              <div className="text-gray-600 leading-relaxed text-sm md:text-base space-y-3">
+              <div className="text-gray-600 leading-relaxed text-sm md:text-base space-y-4">
                 <p>
-                  Established in 2007, Sri Anand Hospital is a premier multispecialty healthcare facility in Anantapur. Committed to safe, ethical, and comprehensive care, we serve all communities with trustworthy medical expertise.
+                  Sri Anand Hospital, Anantapur, was founded in 2007 by <strong>Dr. M. Anand</strong>. It began as a small clinic with a vision to deliver quality orthopedic care. In 2009, the hospital expanded into a 50-bedded multi-speciality hospital, strengthening its ability to serve a larger community.
                 </p>
                 <p>
-                  We specialize in advanced orthopedic care, trauma, joint replacements, and sports medicine. Our hospital provides 24/7 emergency services and minimally invasive treatments for faster recovery.
+                  The hospital is committed to providing <strong>safe, ethical, and comprehensive</strong> healthcare services. Its primary focus is on building long-term trust and delivering reliable, patient-centered care, especially for economically weaker sections of society.
+                </p>
+                
+                <div className="bg-gray-50 p-6 rounded-2xl border-l-4 border-red-600 mt-6">
+                  <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
+                    <Stethoscope size={18} className="text-red-600" />
+                    Core Specialization
+                  </h4>
+                  <p className="text-sm mb-3">Specializing in diagnosis, treatment, and rehabilitation of musculoskeletal conditions:</p>
+                  <div className="grid grid-cols-2 gap-y-1 gap-x-4 text-xs font-semibold text-gray-700">
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-red-600"></div>
+                      Bones
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-red-600"></div>
+                      Joints
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-red-600"></div>
+                      Ligaments
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-red-600"></div>
+                      Muscles
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-red-600"></div>
+                      Tendons
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-red-600"></div>
+                      Injuries
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-4">
+                  <h4 className="font-bold text-gray-900 mb-3">Key Services</h4>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+                    <li className="flex items-center gap-2">
+                      <Award size={14} className="text-red-600" />
+                      Acute & Complex Trauma Care
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Award size={14} className="text-red-600" />
+                      Sports Injury Management
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Award size={14} className="text-red-600" />
+                      Arthroscopy Surgeries
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Award size={14} className="text-red-600" />
+                      Joint Replacement Procedures
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Award size={14} className="text-red-600" />
+                      Pediatric Orthopedics
+                    </li>
+                  </ul>
+                </div>
+
+                <p className="italic text-gray-500 pt-4 border-t border-gray-100">
+                  Advanced treatment approaches include the use of minimally invasive techniques to restore function, improve recovery, and enable early mobility.
                 </p>
               </div>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-gray-100">
-              {stats.map((stat, idx) => (
-                <motion.div 
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="text-center"
-                >
-                  <div className={`${stat.bg} ${stat.color} w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mx-auto mb-2 shadow-sm`}>
-                    <stat.icon size={20} />
-                  </div>
-                  <div className="text-lg md:text-xl font-bold text-gray-900">{stat.value}</div>
-                  <div className="text-[10px] md:text-xs text-gray-500 font-medium uppercase tracking-wider">{stat.label}</div>
-                </motion.div>
-              ))}
             </div>
           </motion.div>
         </div>
