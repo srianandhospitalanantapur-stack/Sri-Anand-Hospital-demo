@@ -38,9 +38,9 @@ export default function Header() {
               className="h-20 w-auto object-contain"
               referrerPolicy="no-referrer"
             />
-            <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-gray-900 leading-tight">Sri Anand Hospital</h1>
-              <p className="text-xs italic text-gray-500">You Are in Safe Hands</p>
+            <div>
+              <h1 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight">Sri Anand Hospital</h1>
+              <p className="hidden sm:block text-xs italic text-gray-500">You Are in Safe Hands</p>
             </div>
           </div>
 
