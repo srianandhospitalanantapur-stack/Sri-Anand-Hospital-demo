@@ -4,7 +4,7 @@ const doctors = [
   { 
     name: 'Dr. M. Anand', 
     role: 'Orthopedic Surgeon & Managing Director', 
-    image: 'https://res.cloudinary.com/dctf5un0g/image/upload/v1777024195/anand.png2_qsjwb0.png ',
+    image: 'https://res.cloudinary.com/dctf5un0g/image/upload/v1777024195/anand.png2_qsjwb0.png',
     initials: 'MA'
   },
   { 
@@ -22,13 +22,13 @@ const doctors = [
   { 
     name: 'Dr. Jayachandra', 
     role: 'Neurosurgeon', 
-    image: 'https://res.cloudinary.com/dctf5un0g/image/upload/v1777024182/dr_jayachandra_wzcenn.png ',
+    image: 'https://res.cloudinary.com/dctf5un0g/image/upload/v1777024182/dr_jayachandra_wzcenn.png',
     initials: 'JC'
   },
   { 
     name: 'Dr. Chandra Mohan', 
     role: 'Urologist', 
-    image: 'https://res.cloudinary.com/dctf5un0g/image/upload/v1777024175/Dr_Chandra_mohan_ud5an6.jpg ',
+    image: 'https://res.cloudinary.com/dctf5un0g/image/upload/v1777024175/Dr_Chandra_mohan_ud5an6.jpg',
     initials: 'CM'
   },
 ];
@@ -68,6 +68,7 @@ export default function Doctors() {
                     src={doctor.image} 
                     alt={doctor.name} 
                     className="w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
                       e.currentTarget.parentElement!.innerHTML = `<span class="text-4xl font-bold text-red-600">${doctor.initials}</span>`;

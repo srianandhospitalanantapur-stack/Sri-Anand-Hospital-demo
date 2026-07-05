@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Phone, Calendar, MessageCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   return (
@@ -64,13 +65,13 @@ export default function Hero() {
               <Phone className="group-hover:animate-bounce" size={22} />
               Emergency Call
             </a>
-            <a 
-              href="#contact"
+            <Link 
+              to="/contact"
               className="bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-lg px-10 py-5 rounded-2xl flex items-center justify-center gap-3 font-bold transition-all hover:-translate-y-1 active:scale-95"
             >
               <Calendar size={22} />
               Book Appointment
-            </a>
+            </Link>
             <a 
               href="https://wa.me/916300882019"
               target="_blank"

@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail, MessageCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -9,10 +10,13 @@ export default function Footer() {
           <div className="space-y-6">
             <div className="flex items-center gap-3">
               <img 
-                src="https://res.cloudinary.com/dctf5un0g/image/upload/v1777024186/logo.png_ys4iva.png " 
+                src="https://res.cloudinary.com/dctf5un0g/image/upload/v1777024186/logo.png_ys4iva.png" 
                 alt="Sri Anand Hospital" 
                 className="h-12 w-auto brightness-0 invert" 
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
               />
               <div>
                 <h3 className="text-xl font-bold text-white">Sri Anand Hospital</h3>
@@ -28,13 +32,12 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="text-lg font-bold text-white mb-6">Quick Links</h4>
-            <ul className="space-y-3 text-sm">
-              <li><a href="#" className="hover:text-red-400 transition-colors">Home</a></li>
-              <li><a href="#about" className="hover:text-red-400 transition-colors">About</a></li>
-              <li><a href="#doctors" className="hover:text-red-400 transition-colors">Doctors</a></li>
-              <li><a href="#specialties" className="hover:text-red-400 transition-colors">Specialties</a></li>
-              <li><a href="#emergency" className="hover:text-red-400 transition-colors">Emergency</a></li>
-              <li><a href="#contact" className="hover:text-red-400 transition-colors">Contact</a></li>
+            <ul className="space-y-3 text-sm font-semibold">
+              <li><Link to="/" className="hover:text-red-400 transition-colors">Home</Link></li>
+              <li><Link to="/about" className="hover:text-red-400 transition-colors">About Us</Link></li>
+              <li><Link to="/services" className="hover:text-red-400 transition-colors">Services</Link></li>
+              <li><Link to="/doctors" className="hover:text-red-400 transition-colors">Our Doctors</Link></li>
+              <li><Link to="/contact" className="hover:text-red-400 transition-colors">Contact & Map</Link></li>
             </ul>
           </div>
 
@@ -74,14 +77,14 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="text-red-400 shrink-0" size={20} />
-                <p className="text-sm">+91 74166 26899</p>
+                <p className="text-sm">+91 63008 82019</p>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="text-red-400 shrink-0" size={20} />
-                <p className="text-sm">srianandhospitalanantapur.com</p>
+                <p className="text-sm break-all">srianandhospitalanantapur@gmail.com</p>
               </div>
               <a 
-                href="https://wa.me/917416626899" 
+                href="https://wa.me/916300882019" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="flex items-center gap-3 hover:text-red-400 transition-colors"

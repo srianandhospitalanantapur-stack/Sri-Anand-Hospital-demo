@@ -36,6 +36,7 @@ export default function About() {
                 src="https://res.cloudinary.com/dctf5un0g/image/upload/v1777024195/anand.png2_qsjwb0.png" 
                 alt="Sri Anand Hospital Building" 
                 className="w-full h-auto object-contain"
+                referrerPolicy="no-referrer"
                 onError={(e) => {
                    e.currentTarget.src = "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=80&w=800";
                 }}

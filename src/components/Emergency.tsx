@@ -61,9 +61,13 @@ export default function Emergency() {
             */}
             <div className="relative">
                <img 
-                 src="https://res.cloudinary.com/dctf5un0g/image/upload/v1777028612/Ambulance_irzaxo.png " 
+                 src="https://res.cloudinary.com/dctf5un0g/image/upload/v1777028612/Ambulance_irzaxo.png" 
                  alt="Ambulance Service" 
                  className="w-full max-w-lg h-auto object-cover rounded-3xl shadow-3xl"
+                 referrerPolicy="no-referrer"
+                 onError={(e) => {
+                   e.currentTarget.src = "https://images.unsplash.com/photo-1587151711096-23c51fcd2d9c?auto=format&fit=crop&q=80&w=800";
+                 }}
                />
                <div className="absolute inset-0 bg-gradient-to-t from-red-600/60 to-transparent rounded-3xl"></div>
             </div>
